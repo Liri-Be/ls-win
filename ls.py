@@ -10,11 +10,11 @@ def main():
     try:
         path = sys.argv[1]
     except IndexError:
-        path = "C:\\Users\\liri\\PycharmProjects\\batch"  # path of ls.py - default path
+        path = os.getcwd()  # path of ls.py - default path
 
     # check if dir
     if os.path.isdir(path):
-        print("\nDirectory of " + path + '\n')
+        print("\nls for the directory: " + path + '\n')
 
         # find all dirs and files in dir
         for r, d, f in os.walk(path):
@@ -40,6 +40,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-
-
-
